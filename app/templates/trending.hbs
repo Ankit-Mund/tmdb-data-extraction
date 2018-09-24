@@ -1,0 +1,26 @@
+ {{outlet}}
+Hello
+<div class="container">
+{{#each model as |movie|}}
+	
+    {{#paper-card as |card|}}
+      <img {{action "transitionToDetails" movie}} src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movie.poster_path}}" alt="Image" title={{movie.title}} style="width:160px;height:160px">
+      {{!-- {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}{{movie.title}}{{/text.headline}}
+        {{/title.text}}
+      {{/card.title}}
+      {{#card.content}}
+        <p>
+          {{movie.overview}}
+        </p>
+      {{/card.content}}
+      {{#card.actions class="layout-column"}}
+        {{#paper-button}}Details{{/paper-button}}
+        {{#paper-button}}Details{{/paper-button}}
+        {{!-- {{#paper-button iconButton=true}}{{paper-icon "share"}}{{/paper-button}}
+      {{/card.actions}} --}} 
+    {{/paper-card}}
+	
+{{/each}}
+</div>

@@ -1,0 +1,6 @@
+@import 'ember-paper';
+.container{
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
+}
