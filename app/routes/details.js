@@ -4,4 +4,5 @@ export default Route.extend({
 	model(params){
 		return this.store.findRecord('trending',params.id);
 	}
+	
 });

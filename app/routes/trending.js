@@ -11,6 +11,9 @@ export default Route.extend({
 	actions : {
 		transitionToDetails(trending) {
 			this.transitionTo('details', trending.get("id"));
-		}
+		},
+
 	}
+
+	
 });
