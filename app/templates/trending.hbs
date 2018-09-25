@@ -1,26 +1,29 @@
  {{outlet}}
-Hello
+<h2>TRENDING</h2>
 <div class="container">
-{{#each model as |movie|}}
+{{#each model.trending as |movie|}}
 	
     {{#paper-card as |card|}}
-      <img {{action "transitionToDetails" movie}} src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movie.poster_path}}" alt="Image" title={{movie.title}} style="width:160px;height:160px">
-      {{!-- {{#card.title as |title|}}
-        {{#title.text as |text|}}
-          {{#text.headline}}{{movie.title}}{{/text.headline}}
-        {{/title.text}}
-      {{/card.title}}
-      {{#card.content}}
-        <p>
-          {{movie.overview}}
-        </p>
-      {{/card.content}}
+      <img {{action "transitionToDetails" movie}} src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movie.poster_path}}" alt="Image" title={{movie.title}} style="width:300px;height:300px">
       {{#card.actions class="layout-column"}}
-        {{#paper-button}}Details{{/paper-button}}
-        {{#paper-button}}Details{{/paper-button}}
-        {{!-- {{#paper-button iconButton=true}}{{paper-icon "share"}}{{/paper-button}}
-      {{/card.actions}} --}} 
+        {{#paper-button}}Add to Favourites{{/paper-button}} 
+      {{/card.actions}} 
     {{/paper-card}}
 	
 {{/each}}
 </div>
+
+<h2>UPCOMING</h2>
+<div class="container">
+{{#each model.upcoming as |movie|}}
+	
+    {{#paper-card as |card|}}
+      <img {{action "transitionToDetails" movie}} src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movie.poster_path}}" alt="Image" title={{movie.title}} style="width:300px;height:300px">
+      {{#card.actions class="layout-column"}}
+        {{#paper-button}}Add to Favourites{{/paper-button}}
+      {{/card.actions}} 
+    {{/paper-card}}
+	
+{{/each}}
+</div>
+	
