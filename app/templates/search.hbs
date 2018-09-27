@@ -1,7 +1,18 @@
 {{outlet}}
+<p>
 {{#paper-card as |card|}}
-{{input type="text" value=search placeholder="search" class="search"}}
+{{input type="text" value=movie placeholder="search" insert-newline='myAction' class="search"}}
 	{{#card.actions class="layout-column"}}
-        {{#paper-button}}Search{{/paper-button}} 
+        {{#paper-button onClick=(action 'search_movie' movie)}}Search{{/paper-button}} 
     {{/card.actions}} 
 {{/paper-card}}
+</p>
+<p>
+{{#each obj as |s|}}
+	
+     <img {{action "transitionToDetails" s}}
+       src="https://image.tmdb.org/t/p/w500/{{s.poster_path}}"
+       style="width:20vw; height:50vh" alt="" title={{s.title}}/>
+   
+ {{/each}}
+</p>
