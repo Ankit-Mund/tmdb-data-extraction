@@ -10,8 +10,13 @@ export default Route.extend({
 	},
 	actions : {
 		transitionToDetails(trending) {
-			this.transitionTo('details', trending.get("id"));
-		},
+			console.log(trending.constructor.modelName);
+			this.transitionTo('details', trending.get("id"),{queryParams:
+				{
+					modelName:trending.constructor.modelName
+				}
+			});
+		}
 
 	}
 

@@ -4,13 +4,17 @@ import Em from 'ember';
 export default DS.RESTAdapter.extend({
 	host: 'http://localhost:3000',
   namespace: 'favourites',
+  buildURL(){
+    return `http://localhost:3000/favourites`;
+  },
+
 createRecord(store, type, snapshot) {
-    let data = this.serialize(snapshot);
+    let data = this.serialize(snapshot,{includeID:true});
     let url = `${this.host}/${this.namespace}/`;
     return new Promise((resolve, reject) => {
       Em.$.ajax({
         type: 'POST',
-        url: url,
+        url: 'http://localhost:3000/favourites' ,
         contentType: 'application/json',
         data: JSON.stringify(data),
         statusCode: {
@@ -27,23 +31,11 @@ createRecord(store, type, snapshot) {
 
     return new Promise(function (resolve, reject)  {
       Em.$.ajax({
-        type: "POST",
+        type: "DELETE",
         contentType: "application/json",
         data: JSON.stringify(data),
-        url: `http://localhost:3000/favourites`,
-        success: {
-          200: {
-
-          }
-        }
-
-      })
+        url: `http://localhost:3000/favourites/`+ snapshot.id,
+        })
     })
-  },
-  
-  buildURL(modelName, id, snapshot, requestType, query) {
-    debugger;
-    return `${this.host}/${this.namespace}`
   }
 });
-

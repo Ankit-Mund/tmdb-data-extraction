@@ -1,19 +1,7 @@
 {{outlet}}
-{{!-- aelfjlfjh
-<p>{{model.id}}</p>
-<p>{{model.title}}</p>
-{{model.popularity}}
-<p><img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{model.poster_path}}" alt="Image" title={{model.title}} style="width:160px;height:160px"></p>
-{{model.release_date}} --}}
+
 
 {{#paper-card as |card|}}
-    {{!-- {{#card.title as |title|}}
-        {{#title.text as |text|}}
-          {{#text.headline}}Card with block{{/text.headline}}
-          {{#text.subhead}}Extra large{{/text.subhead}}
-        {{/title.text}}
-    {{/card.title}} --}}
-    
     {{#card.content class="layout-row layout-align-space-between"}}
         {{#card.media}}
           <div class="card-media">
@@ -33,7 +21,7 @@
     {{/card.content}}    
         {{#card.actions class="layout-column"}}
           {{#paper-button}}Add to Favourites{{/paper-button}}
-        {{#paper-button}}Delete{{/paper-button}}
+        
         {{/card.actions}}
     
 {{/paper-card}}

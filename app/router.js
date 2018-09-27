@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('details', {path: '/details/:id'});
 
   this.route('favourite');
+  this.route('search');
 });
 
 export default Router;

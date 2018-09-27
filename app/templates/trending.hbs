@@ -20,7 +20,7 @@
     {{#paper-card as |card|}}
       <img {{action "transitionToDetails" movie}} src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{movie.poster_path}}" alt="Image" title={{movie.title}} style="width:300px;height:300px">
       {{#card.actions class="layout-column"}}
-        {{#paper-button}}Add to Favourites{{/paper-button}}
+        {{#paper-button onClick=(action 'addToFavourite' movie)}}Add to Favourites{{/paper-button}}
       {{/card.actions}} 
     {{/paper-card}}
 	
