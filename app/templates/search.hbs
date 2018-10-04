@@ -9,10 +9,8 @@
 </p>
 <p>
 {{#each obj as |s|}}
-	
-     <img {{action "transitionToDetails" s}}
+	<img {{action "transitionToDetails" s}}
        src="https://image.tmdb.org/t/p/w500/{{s.poster_path}}"
        style="width:20vw; height:50vh" alt="" title={{s.title}}/>
-   
- {{/each}}
+{{/each}}
 </p>
